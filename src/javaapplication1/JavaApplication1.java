@@ -17,15 +17,32 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Integer number1, number2, sum ;
+        Integer number1, number2, sum, res;
+        String znak;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите первое число");
-        number1=scanner.nextInt();
+        number1 = scanner.nextInt();
         System.out.println("Введите второе число");
-        number2=scanner.nextInt();
-        sum=number1+number2;
-        System.out.println("Сумма чисел равна: "+sum);
-        
+        number2 = scanner.nextInt();
+        System.out.println("Введите действие (+ или -)");
+        znak = scanner.next();
+        switch (znak) {
+            case "+":
+                res = number1 + number2;
+
+                break;
+            case "-":
+                res = number1 - number2;
+                break;
+            default:
+                System.out.println("вы неправильно ввели цифры");
+                res = null;
+
+        }
+        if (res != null) {
+
+            System.out.println("Сумма чисел равна: " + res);
+            sum = number1 + number2;
+        }
     }
-    
 }
